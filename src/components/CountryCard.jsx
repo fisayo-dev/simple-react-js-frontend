@@ -2,9 +2,9 @@ import { getCurrencyLabel } from "../utils/countries";
 
 export const CountryCard = ({ country, index }) => {
   return (
-    <article
+    <div
       key={`${country.name.common}-${index}`}
-      className="flex items-center px-4 gap-4 rounded-2xl border border-gray-200  p-4 shadow-sm"
+      className="flex items-center px-4 gap-4 rounded-2xl border border-gray-200 p-4 shadow-sm"
     >
       <div className="shrink-0 overflow-hidden rounded-2xl border border-gray-200 bg-white p-2 shadow-sm">
         {country.flags?.svg ? (
@@ -14,7 +14,7 @@ export const CountryCard = ({ country, index }) => {
             className="h-12 w-18 object-cover"
           />
         ) : (
-          <div className="grid h-12 w-18 place-content-center text-3xl">
+          <div className="grid h-12 w-18 place-content-center text-3xl m-2">
             {country.flag || "🏳️"}
           </div>
         )}
@@ -36,6 +36,6 @@ export const CountryCard = ({ country, index }) => {
           </p>
         </div>
       </div>
-    </article>
+    </div>
   );
 };

@@ -25,10 +25,10 @@ const AllCountriesList = () => {
 
   return (
     <main>
-      <div className="container mx-auto px-4 py-2">
+      <div className="grid container mx-auto px-4 py-2">
         <div className="bg-white p-4 rounded-3xl shadow-sm w-full sm:max-w-4xl max-h-100 overflow-y-auto">
           {loading ? (
-            <div className="py-10 text-center text-gray-500">Loading...</div>
+            <div className="py-50 text-center text-gray-500">Loading...</div>
           ) : error ? (
             <div className="py-10 text-center text-red-600">
               Error: {error.message}
