@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { fetchCountries } from "../lib/countries";
+import { CountryCard } from "./CountryCard";
 
 const AllCountriesList = () => {
   const [loading, setLoading] = useState(true);
@@ -21,19 +22,23 @@ const AllCountriesList = () => {
         setLoading(false);
       });
   }, []);
-  
+
   return (
     <main>
-      <div className="container mx-auto px-4 py-2 text-center">
-        <div className="bg-white p-3 rounded-2xl shadow-sm max-h-50 w-full sm:max-w-xl overflow-y-auto">
+      <div className="container mx-auto px-4 py-2">
+        <div className="bg-white p-4 rounded-3xl shadow-sm w-full sm:max-w-4xl max-h-100 overflow-y-auto">
           {loading ? (
-            <div>Loading...</div>
+            <div className="py-10 text-center text-gray-500">Loading...</div>
           ) : error ? (
-            <div>Error: {error.message}</div>
+            <div className="py-10 text-center text-red-600">
+              Error: {error.message}
+            </div>
           ) : (
-            countries.map((country, index) => (
-              <div key={index} className="bg-gray-200 p-2 mb-2">{country.name.common}</div>
-            ))
+            <div className="grid gap-4 sm:grid-cols-2 p-4">
+              {countries.map((country, index) => (
+                <CountryCard key={`${country.name.common}-${index}`} country={country} index={index} />
+              ))}
+            </div>
           )}
         </div>
       </div>
