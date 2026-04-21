@@ -24,17 +24,17 @@ const AllCountriesList = () => {
   }, []);
 
   return (
-    <main>
-      <div className="grid container mx-auto px-4 py-2">
-        <div className="bg-white p-4 rounded-3xl shadow-sm w-full sm:max-w-4xl max-h-100 overflow-y-auto">
+    <main className="w-full">
+      <div className="ml-auto mr-auto w-full max-w-4xl pt-1 pb-1">
+        <div className="w-full max-h-100 overflow-y-auto rounded-3xl bg-white p-3 shadow-sm sm:p-4">
           {loading ? (
-            <div className="py-50 text-center text-gray-500">Loading...</div>
+            <div className="pt-8 pb-8 text-center text-gray-500">Loading...</div>
           ) : error ? (
-            <div className="py-10 text-center text-red-600">
+            <div className="pt-8 pb-8 text-center text-red-600">
               Error: {error.message}
             </div>
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 p-4">
+            <div className="grid gap-3 pt-1 pb-1 sm:grid-cols-2">
               {countries.map((country, index) => (
                 <CountryCard key={`${country.name.common}-${index}`} country={country} index={index} />
               ))}
