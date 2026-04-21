@@ -16,6 +16,7 @@ const Header = () => {
             </a>{" "}
             api.
           </p>
+          <span className="text-xs">It shows name, flag, currency and capital.</span>
         </div>
       </div>
     </header>
