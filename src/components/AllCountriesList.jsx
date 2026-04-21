@@ -31,7 +31,7 @@ const AllCountriesList = () => {
             <div>Error: {error.message}</div>
           ) : (
             countries.map((country, index) => (
-              <div key={index}>{country.name.common}</div>
+              <div key={index} className="bg-gray-200 p-2 mb-2">{country.name.common}</div>
             ))
           )}
         </div>
